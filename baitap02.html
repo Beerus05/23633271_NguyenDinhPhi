@@ -14,12 +14,12 @@
     <input type="text" id="heightJohn" placeholder="heightJohn">
     <button id="click">Click</button>
     <script>
+        var button = document.getElementById('click');
         button.onclick = () => {
-            var button = document.getElementById('click');
             var massMark = document.getElementById('massMark').value;
             var heightMark = document.getElementById('heightMark').value;
-            var massJonh = document.getElementById('massJohn').value;
-            var heightJonh = document.getElementById('heightJohn').value;
+            var massJohn = document.getElementById('massJohn').value;
+            var heightJohn = document.getElementById('heightJohn').value;
 
             var BMIMark = massMark / (heightMark * heightMark);
             var BMIJohn = massJohn / (heightJohn * heightJohn);
