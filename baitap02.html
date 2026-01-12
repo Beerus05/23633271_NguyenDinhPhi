@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>massMark</p>
+        <input type="text" name="" id="massMark">
+    </div>
+    <div>
+        <p>heightMark</p>
+        <input type="text" name="" id="heightMark">
+    </div>
+    <div>
+        <p>massJohn</p>
+        <input type="text" name="" id="massJohn">
+    </div>
+    <div>
+        <p>heightJohn</p>
+        <input type="text" name="" id="heightJohn">
+    </div>
+    <button id="click">Click</button>
+    <script>
+        var button = document.getElementById('click');
+        var massMark = document.getElementById('massMark').value;
+        var heightMark = document.getElementById('heightMark').value;
+        var massJonh = document.getElementById('massJohn').value;
+        var heightJonh = document.getElementById('heightJohn').value;
+
+        var BMIMark = massMark / (heightMark * heightMark);
+        var BMIJohn = massJohn / (heightJohn * heightJohn);
+
+        console.log("BMI Mark:", BMIMark);
+        console.log("BMI John:", BMIJohn);
+
+        if (BMIMark > BMIJohn) {
+            console.log(`Mark's BMI (${BMIMark.toFixed(1)}) is higher than John's (${BMIJohn.toFixed(1)})!`);
+        } else if (BMIJohn > BMIMark) {
+            console.log(`John's BMI (${BMIJohn.toFixed(1)}) is higher than Mark's (${BMIMark.toFixed(1)})!`);
+        } else {
+            console.log(`Both have the same BMI (${BMIMark.toFixed(1)})!`);
+        }
+    </script>   
+</body>
+</html>

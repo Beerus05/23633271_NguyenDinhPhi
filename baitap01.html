@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="mass">
+    <input type="text" name="" id="height">
+    <button id="click">Click</button>
+    <script>
+        
+        var button = document.getElementById("click");
+        button.onclick=()=>{
+            var mass = document.getElementById('mass').value;
+            var height = document.getElementById('height').value;
+            var BMI = mass/ (height*height);
+            console.log(BMI);
+
+        }
+    </script>
+</body>
+</html>
