@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Dolphins Scores (3 Rounds)</h3>
+    <input type="text" id="d1" placeholder="Dolphins Score 1">
+    <input type="text" id="d2" placeholder="Dolphins Score 2">
+    <input type="text" id="d3" placeholder="Dolphins Score 3">
+
+    <h3>Koalas Scores (3 Rounds)</h3>
+    <input type="text" id="k1" placeholder="Koalas Score 1">
+    <input type="text" id="k2" placeholder="Koalas Score 2">
+    <input type="text" id="k3" placeholder="Koalas Score 3">
+    
+    <br><br>
+    <button id="btn-check">Find Winner</button>
+
+    <script>
+        const button = document.getElementById('btn-check');
+
+        button.onclick = () => {
+            const d1 = Number(document.getElementById('d1').value);
+            const d2 = Number(document.getElementById('d2').value);
+            const d3 = Number(document.getElementById('d3').value);
+
+            const k1 = Number(document.getElementById('k1').value);
+            const k2 = Number(document.getElementById('k2').value);
+            const k3 = Number(document.getElementById('k3').value);
+
+            const scoreDolphins = (d1 + d2 + d3) / 3;
+            const scoreKoalas = (k1 + k2 + k3) / 3;
+
+            console.log(`Dolphins Average: ${scoreDolphins.toFixed(1)}`);
+            console.log(`Koalas Average: ${scoreKoalas.toFixed(1)}`);
+            
+            if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
+                console.log(`🏆 Dolphins win the trophy with ${scoreDolphins.toFixed(1)} points!`);
+            } 
+            else if (scoreKoalas > scoreDolphins && scoreKoalas >= 100) {
+                console.log(`🏆 Koalas win the trophy with ${scoreKoalas.toFixed(1)} points!`);
+            } 
+            else if (scoreDolphins === scoreKoalas && scoreDolphins >= 100 && scoreKoalas >= 100) {
+                console.log("🤝 Both win the trophy! (It's a draw and both >= 100)");
+            } 
+            else {
+                console.log("😭 No one wins the trophy (Scores < 100 or inputs invalid).");
+            }
+        }
+    </script>
+</body>
+</html>
