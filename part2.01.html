@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding Challenge #1</title>
+</head>
+<body>
+
+<div>
+    <h3>Dolphins</h3>
+    <input type="text" id="dolphin1" placeholder="score 1">
+    <input type="text" id="dolphin2" placeholder="score 2">
+    <input type="text" id="dolphin3" placeholder="score 3">
+</div>
+
+<div>
+    <h3>Koalas</h3>
+    <input type="text" id="koala1" placeholder="score 1">
+    <input type="text" id="koala2" placeholder="score 2">
+    <input type="text" id="koala3" placeholder="score 3">
+</div>
+
+<button id="cal">Calculate</button>
+
+<script>
+    const calcAverage = (a, b, c) => (a + b + c) / 3;
+
+    const checkWinner = (avgDolphins, avgKoalas) => {
+        if (avgDolphins >= 2 * avgKoalas) {
+            console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+        } else if (avgKoalas >= 2 * avgDolphins) {
+            console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+        } else {
+            console.log("No team wins...");
+        }
+    };
+
+    document.getElementById("cal").onclick = () => {
+        const d1 = parseFloat(dolphin1.value);
+        const d2 = parseFloat(dolphin2.value);
+        const d3 = parseFloat(dolphin3.value);
+
+        const k1 = parseFloat(koala1.value);
+        const k2 = parseFloat(koala2.value);
+        const k3 = parseFloat(koala3.value);
+
+        const avgDolphins = calcAverage(d1, d2, d3);
+        const avgKoalas = calcAverage(k1, k2, k3);
+
+        console.log("Avg Dolphins:", avgDolphins);
+        console.log("Avg Koalas:", avgKoalas);
+
+        checkWinner(avgDolphins, avgKoalas);
+    };  
+    checkWinner(
+        calcAverage(44, 23, 71),
+        calcAverage(65, 54, 49)
+    );
+    checkWinner(
+        calcAverage(85, 54, 41),
+        calcAverage(23, 34, 27)
+    );
+</script>
+
+</body>
+</html>
